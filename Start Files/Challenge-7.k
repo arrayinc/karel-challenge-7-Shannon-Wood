@@ -23,3 +23,64 @@ and that there are no desks right up against the wall.
 
 When Karel is finished, all the desks in the room should have a valentine!
 */
+
+
+import "turns";
+
+
+/* MAIN FUNCTION */
+function DeliverValentines() {
+	goToThird();
+	scanRowEast();
+	goToFifth();
+	scanRowWest();
+	goToSeventh();
+	scanRowEast();
+}
+
+
+
+/* SUB-FUNCTIONS */
+function scanRowEast() {
+	while(frontIsClear()) {
+		if (rightIsBlocked()) {
+			putBeeper();
+		}
+		move();
+	}
+}
+
+
+function scanRowWest() {
+	while(frontIsClear()) {
+		if (leftIsBlocked()) {
+			putBeeper();
+		}
+		move();
+	}
+}
+
+
+
+function goToThird() {
+	turnLeft();
+	move();
+	move();
+	turnRight();
+}
+
+
+function goToFifth() {
+	turnLeft();
+	move();
+	move();
+	turnLeft();
+}
+
+
+function goToSeventh() {
+	turnRight();
+	move();
+	move();
+	turnRight();
+}
